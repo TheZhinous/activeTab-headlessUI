@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <!-- tailwind by cli -->
+  </head>
+  <body
+    class="bg-blue-500 flex items-center justify-center h-screen container"
+    x-data="{tab:1 , activeClass:'bg-white outline-none ring-4 ring-blue-200 ring-opacity-60 ring-offset-4 ring-offset-blue-500 text-blue-700'}"
+  >
+    <div class="max-w-lg">
+      <!-- tabs -->
+      <div
+        class="flex justify-between items-center gap-x-2 bg-slate-900 bg-opacity-40 w-full  p-2 text-slate-300 rounded-xl overflow-hidden"
+      >
+        <button
+          @click="tab = 1"
+          class="w-full capitalize font-semibold text-lg px-12 py-4 rounded-md hover:bg-slate-200 hover:bg-opacity-20 "
+          :class="tab===1 ? activeClass : '' "
+        >
+          recent
+        </button>
+        <button
+          @click="tab = 2"
+          class="w-full capitalize font-semibold text-lg px-12 py-4 rounded-md hover:bg-slate-200 hover:bg-opacity-20"
+          :class="tab===2 ? activeClass : '' "
+        >
+          popular
+        </button>
+        <button
+          @click="tab = 3"
+          class="w-full capitalize font-semibold text-lg px-12 py-4 rounded-md hover:bg-slate-200 hover:bg-opacity-20"
+          :class="tab===3 ? activeClass : '' "
+        >
+          trending
+        </button>
+      </div>
+
+      <!-- contents -->
+      <div x-show="tab===1" class="bg-white p-4 mt-4 rounded-md capitalize">
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">does drinking coffee make you smarter?</p>
+          <span class="text-slate-500"
+            >5h ago &bull; 5 comments &bull; 2 shares</span
+          >
+        </div>
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">so you'v bought coffee...now what?</p>
+          <span class="text-slate-500"
+            >5h ago &bull; 5 comments &bull; 2 shares</span
+          >
+        </div>
+      </div>
+      <div x-show="tab===2" class="bg-white p-4 mt-4 rounded-md capitalize">
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">is tech making coffee better or worse?</p>
+          <span class="text-slate-500"
+            >jan 7 &bull; 29 comments &bull; 16 shares</span
+          >
+        </div>
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">
+            the most innovative things happening in coffee
+          </p>
+          <span class="text-slate-500"
+            >mar 19 &bull; 25 comments &bull; 12 shares</span
+          >
+        </div>
+      </div>
+      <div x-show="tab===3" class="bg-white p-4 mt-4 rounded-md capitalize">
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">
+            ask me anything : 10 answers to your quertions about coffee
+          </p>
+          <span class="text-slate-500"
+            >2d ago &bull; 9 comments &bull; 5 shares</span
+          >
+        </div>
+        <div class="mb-4 rounded-md p-4 hover:bg-slate-200">
+          <p class="font-bold">
+            the worst advice we've ever heard about coffee
+          </p>
+          <span class="text-slate-500"
+            >4d ago &bull; 1 comments &bull; 2 shares</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
